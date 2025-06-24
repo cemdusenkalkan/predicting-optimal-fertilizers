@@ -1,25 +1,29 @@
 """
-Fertilizer Competition - AutoGluon + Hill Climbing Pipeline
+Competitive Fertilizer Prediction Package
 
-A competitive machine learning pipeline for fertilizer recommendation
-using AutoGluon ensemble methods and hill climbing optimization.
+Implements proven techniques for agricultural fertilizer recommendation
+targeting 0.36+ MAP@3 performance.
 """
-
-__version__ = "1.0.0"
-__author__ = "Competition Team"
 
 from .config import config
 from .data_loader import DataLoader
 from .feature_engineering import FeatureEngineer
-from .hill_climbing import HillClimbingOptimizer
-from .autogluon_trainer import AutoGluonTrainer
-from .predictor import FertilizerPredictor
+from .ranking_models import RankingOptimizedModels, ProbabilityCalibration, SnapshotEnsemble
+from .meta_stacking import MetaStackingEnsemble, DataAugmentation
+from .predictor import CompetitiveFertilizerPredictor
 
+__version__ = "2.0.0"
+__author__ = "Competition Team"
+
+# Make primary classes available at package level
 __all__ = [
     'config',
     'DataLoader',
-    'FeatureEngineer', 
-    'HillClimbingOptimizer',
-    'AutoGluonTrainer',
-    'FertilizerPredictor'
+    'FeatureEngineer',
+    'RankingOptimizedModels',
+    'ProbabilityCalibration',
+    'SnapshotEnsemble',
+    'MetaStackingEnsemble',
+    'DataAugmentation',
+    'CompetitiveFertilizerPredictor'
 ] 

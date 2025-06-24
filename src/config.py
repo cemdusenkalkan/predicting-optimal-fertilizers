@@ -5,14 +5,21 @@ import yaml
 
 @dataclass
 class DataConfig:
-    """Data paths and preprocessing configuration"""
-    train_path: str = "/kaggle/input/playground-series-s5e6/train.csv"
-    test_path: str = "/kaggle/input/playground-series-s5e6/test.csv"
-    original_path: str = "/kaggle/input/fertilizer-recommendation/Fertilizer_Prediction.csv"
+    """Data loading and processing configuration"""
     
-    # Data expansion strategy (PROVEN TECHNIQUE)
-    training_multiplier: int = 3  # Forum proven: 3x expansion
-    original_multiplier: int = 2  # Forum proven: 2x original data
+    # Local dataset paths
+    train_path: str = "datasets/train.csv"
+    test_path: str = "datasets/test.csv"
+    sample_submission_path: str = "datasets/sample_submission.csv"
+    
+    # Original dataset (if available locally)
+    original_path: Optional[str] = None
+    
+    # Data processing
+    training_multiplier: int = 3
+    original_multiplier: int = 2
+    drop_duplicates: bool = True
+    handle_missing: bool = True
     
     # Column name fixes
     fix_temperature_typo: bool = True  # 'Temparature' -> 'Temperature'
