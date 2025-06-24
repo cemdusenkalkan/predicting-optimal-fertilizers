@@ -55,8 +55,6 @@ data/processed/
 data/submissions/*.csv
 
 # Large datasets (keep structure but not data)
-*.csv
-!data/submissions/.gitkeep
 
 # Temporary files
 *.tmp
