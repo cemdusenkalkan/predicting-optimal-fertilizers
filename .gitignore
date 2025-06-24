@@ -52,7 +52,6 @@ AutogluonModels/
 experiments/
 logs/
 data/processed/
-data/submissions/*.csv
 
 # Large datasets (keep structure but not data)
 
@@ -67,5 +66,4 @@ temp/
 *.pkl
 *.pickle
 
-# Competition specific
-submission_*.csv 
+# Competition specifi
