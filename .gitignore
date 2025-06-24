@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# AutoGluon models (large files)
+models/
+AutogluonModels/
+
+# Experiment outputs
+experiments/
+logs/
+data/processed/
+data/submissions/*.csv
+
+# Large datasets (keep structure but not data)
+*.csv
+!data/submissions/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# Model checkpoints
+*.ckpt
+*.pth
+*.pkl
+*.pickle
+
+# Competition specific
+submission_*.csv 
