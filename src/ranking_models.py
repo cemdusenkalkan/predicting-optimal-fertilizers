@@ -152,6 +152,7 @@ class RankingOptimizedModels:
         
         # Convert all categorical and object columns to codes for LightGBM
         X_lgb = X_processed.copy()
+        categorical_features = []
         for col in X_processed.select_dtypes(include=['category', 'object']).columns:
             if X_lgb[col].dtype.name == 'category':
                 X_lgb[col] = X_lgb[col].cat.codes
@@ -159,6 +160,7 @@ class RankingOptimizedModels:
                 # Convert object to category then to codes
                 X_lgb[col] = pd.Categorical(X_lgb[col]).codes
         
+        # LightGBM doesn't need categorical feature specification when using codes
         lgb_ranker.fit(X_lgb, y_encoded, group=group_sizes)
         models['lgb_ranker'] = lgb_ranker
         
